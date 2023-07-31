@@ -6,8 +6,8 @@ This is a behavioral level design for a chess clock. It was designed using 'Viva
 
 **Schematic**
 
-![](img/schematic.JPG)
+![](img/schematic.jpg)
 
 **Result of simulation for sample testbench provided**
 
-![](img/testbench_simulation.JPG)
+![](img/testbench_simulation.jpg)
