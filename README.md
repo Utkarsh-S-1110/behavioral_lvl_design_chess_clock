@@ -3,7 +3,8 @@
 This is a behavioral level design for a chess clock. It was designed using 'Vivado 2020.2'
 ## FOR THE FUTURE:
 • I will be updating this repository soon with a RTL design and a physical implementation.
-**Schematic**
+
+**State Diagram**
 
 ![](img/state_diag.png)
 
