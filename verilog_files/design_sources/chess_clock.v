@@ -1,7 +1,5 @@
 `timescale 1ns / 1ps
-module chess_clock(input button1, input button2, input start_button, output clk_one,output clk_four, output start,
- output reset, output player, output zero1, output zero2, output time1, output time2,
- output deb_button1,output deb_button2);
+module chess_clock(input button1, input button2, input start_button,output a_to_g_1, output a_to_g_2);
  
     wire clk_one;                 // 1GHz clock
     wire clk_four;                // 0.25 Ghz clock
@@ -17,7 +15,11 @@ module chess_clock(input button1, input button2, input start_button, output clk_
     wire ss2 = button2;
     wire ssb = start_button;
     
-    
+    wire dp = 1;                      //off
+    wire [7:0] an1 = 8'b11111110;
+    wire [7:0] an2 = 8'b11101111;
+    wire [6:0] a_to_g_1;
+    wire [6:0] a_to_g_2;    
     
     clk_one_hz f1(clk_one);
     clk_four_hz f2(clk_one,clk_four);
@@ -32,6 +34,8 @@ module chess_clock(input button1, input button2, input start_button, output clk_
     debounce_s1 d3 (clk_one,ss2,q21);
     debounce_s1 d4 (clk_one,q21,q22);
     assign deb_button2 = q21 & (~q22);
+    hex7seg hs1 (time1,a_to_g_1);
+    hex7seg hs2 (time2,a_to_g_2);
     
 endmodule
 
